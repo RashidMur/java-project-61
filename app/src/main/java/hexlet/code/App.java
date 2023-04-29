@@ -10,9 +10,9 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("0 - Exit");
-
+        System.out.print("Your choice: ");
         int choice = scanner.nextInt();
-        System.out.println("Your choice: " + choice);
+
         switch (choice) {
             case 1 :
                 Scanner scannerCase1 = new Scanner(System.in);
