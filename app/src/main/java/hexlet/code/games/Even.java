@@ -1,15 +1,15 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
     public static void even() {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scannerEven = new Scanner(System.in);
         System.out.println("");
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = scanner.next();
+        String userName = scannerEven.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String yes = "yes";
@@ -23,7 +23,7 @@ public class Even {
             int randomNumber = random.nextInt(diff + 1);
             randomNumber += min;
             System.out.println("Question: " + randomNumber);
-            String answer = scanner.next();
+            String answer = scannerEven.next();
             System.out.println("Your answer: " + answer);
             if (answer.equalsIgnoreCase(yes) || answer.equalsIgnoreCase(no)) { // ответ должен быть либо "yes"
                 // либо "no", при другом значении игра останавливается
