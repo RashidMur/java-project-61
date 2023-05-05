@@ -7,4 +7,4 @@ https://asciinema.org/a/y7UJhnEEzryy5UmI4ZzK1PhmT
 
 ![Calc](https://github.com/RashidMur/java-project-61/raw/app/app/Calc.png)
 
-![GCD](https://github.com/RashidMur/java-project-61/app/GCD.png)
+![GCD](https://github.com/RashidMur/java-project-61/raw/app/GCD.png)
