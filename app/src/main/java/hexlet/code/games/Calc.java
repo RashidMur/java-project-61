@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Calc {
     public static void calc() {
         Scanner scannerCalc = new Scanner(System.in);
-        System.out.println("");
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userNameCalc = scannerCalc.next();
@@ -36,7 +36,6 @@ public class Calc {
                     break;
                 case "*" :
                     correctAnswer = randomNumber * randomNumberNext;
-                    break;
                 default :
                     break;
             }

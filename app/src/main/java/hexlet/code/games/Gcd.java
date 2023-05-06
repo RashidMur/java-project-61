@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Gcd {
     public static void gcd() {
         Scanner scannerGcdName = new Scanner(System.in);
-        System.out.println("");
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userNameGcd = scannerGcdName.next();

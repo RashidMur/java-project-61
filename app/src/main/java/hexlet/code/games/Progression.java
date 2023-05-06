@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Progression {
     public static void progression() {
         Scanner scannerProgName = new Scanner(System.in);
-        System.out.println("");
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userNameProg = scannerProgName.next();

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Even {
     public static void even() {
         Scanner scannerEven = new Scanner(System.in);
-        System.out.println("");
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scannerEven.next();
@@ -23,8 +23,8 @@ public class Even {
             int randomNumber = random.nextInt(diff + 1);
             randomNumber += min;
             System.out.println("Question: " + randomNumber);
+            System.out.print("Your answer: ");
             String answer = scannerEven.next();
-            System.out.println("Your answer: " + answer);
             if (answer.equalsIgnoreCase(yes) || answer.equalsIgnoreCase(no)) { // ответ должен быть либо "yes"
                 // либо "no", при другом значении игра останавливается
                 if (randomNumber % 2 == 0 && answer.equalsIgnoreCase(yes)) { // число randomNumber является четным
