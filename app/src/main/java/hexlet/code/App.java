@@ -22,28 +22,35 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         int choice = scanner.nextInt();
+        final int numberGreet = 1;
+        final int numberEven = 2;
+        final int numberCalc = 3;
+        final int numberGCD = 4;
+        final int numberProgression = 5;
+        final int numberPrime = 6;
+        final int numberExit = 0;
         switch (choice) {
-            case 1 :
+            case numberGreet :
                 Engine.greetings();
                 Scanner scannerEven = new Scanner(System.in);
                 String userName = scannerEven.next();
                 System.out.println("Hello, " + userName + "!");
                 break;
-            case 2 :
+            case numberEven :
                 Even.even();
                 break;
-            case 3 :
+            case numberCalc :
                 Calc.calc();
                 break;
-            case 4 :
+            case numberGCD :
                 Gcd.gcd();
                 break;
-            case 5 :
+            case numberProgression :
                 Progression.progression();
                 break;
-            case 6 :
+            case numberPrime :
                 Prime.prime();
-            case 0 :
+            case numberExit :
             default :
         }
         scanner.close();

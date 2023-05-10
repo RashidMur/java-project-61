@@ -14,12 +14,13 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         String yes = "yes";
         String no = "no";
-        int min = 1;
-        int max = 100;
-        int diff = max - min;
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        final int maxNumberRоund = 3;
+        int diff = maxNumber - minNumber;
         Random random = new Random();
         int i;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < maxNumberRоund; i++) {
             int randomNumber = random.nextInt(diff + 1);
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");

@@ -14,12 +14,13 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         String yes = "yes";
         String no = "no";
-        int min = 2;
-        int max = 100;
-        int diff = max - min;
+        final int minNumber = 2;
+        final int maxNumber = 100;
+        int diff = maxNumber - minNumber;
+        final int maxNumberRоund = 3;
         Random random = new Random();
         int i;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < maxNumberRоund; i++) {
             int randomNumber = random.nextInt(diff + 1);
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");

@@ -11,16 +11,16 @@ public class Engine {
         System.out.println("Correct!");
     }
     public static void wrongAnswer(String answer, String yes, String userName) {
-        String answerNo;
+        String answerOpposite;
         String opposite;
         if (answer.equals(yes)) {
-            answerNo = "'yes'";
+            answerOpposite = "'yes'";
             opposite = "'no'";
         } else {
-            answerNo = "'no'";
+            answerOpposite = "'no'";
             opposite = "'yes'";
         }
-        System.out.println(answerNo + " is wrong answer ;(. Correct answer was " + opposite  + ".");
+        System.out.println(answerOpposite + " is wrong answer ;(. Correct answer was " + opposite  + ".");
         System.out.println("Let's try again, " + userName + "!");
     }
     public static void wrongNumber(int correctNumb, int userNumb, String userName) {
@@ -28,7 +28,8 @@ public class Engine {
         System.out.println("Let's try again, " + userName + "!");
     }
     public static void congratulations(int i, String userName) {
-        if (i == 3) { // если счетчик цикла for становится равен 3 то
+        final int maxNumberRоund = 3;
+        if (i == maxNumberRоund) { // если счетчик цикла for становится равен 3 то
             System.out.println("Congratulations, " + userName + "!");
         }
     }

@@ -12,13 +12,14 @@ public class Calc {
         String userName = scannerCalc.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println("What is the result of the expression?");
-        int min = 1;
-        int max = 100;
-        int diff = max - min;
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        final int maxNumberRоund = 3;
+        int diff = maxNumber - minNumber;
         Random random = new Random();
         String[] operand = new String[]{"+", "-", "*"};
         int i;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < maxNumberRоund; i++) {
             int n = (int) Math.floor(Math.random() * operand.length);
             int randomNumber = random.nextInt(diff + 1);
             int randomNumberNext = random.nextInt(diff + 1);

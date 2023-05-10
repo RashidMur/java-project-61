@@ -12,28 +12,29 @@ public class Progression {
         String userName = scannerProg.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println("What number is missing in the progression?");
-        int min = 5;
-        int max = 10;
-        int diff = max - min;
+        final int minNumber = 5;
+        final int maxNumber = 10;
+        final int maxNumberRоund = 3;
+        int diff = maxNumber - minNumber;
         Scanner scannerProgAnsver = new Scanner(System.in);
         Random random = new Random();
         int i;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < maxNumberRоund; i++) {
             int randomLongArr = random.nextInt(diff + 1); // рандомный размер массива
             int randomStep = random.nextInt(diff + 1); // рандомный шаг прогрессии
-            randomLongArr += min;
-            randomStep += min;
-            int min1 = 1;
-            int max1 = 50;
-            int diff1 = max1 - min1;
-            Random random1 = new Random();
-            int startNumder = random1.nextInt(diff1 + 1);
+            randomLongArr += minNumber;
+            randomStep += minNumber;
+            final int minNumberArr = 1;
+            final int maxNumberArr = 50;
+            int diff1 = maxNumberArr - minNumberArr;
+            Random randomStartArr = new Random();
+            int startNumder = randomStartArr.nextInt(diff1 + 1);
             int[] arr = new int[randomLongArr];
             arr[0] = startNumder;
             for (int j = 1; j <= arr.length - 1; j++) { // строим арифмитическую прогрессию и записываем в массив
                 arr[j] = arr[j - 1] + randomStep;
             }
-            int ranNumder = random1.nextInt(randomLongArr - 1); // рандомное число в рамках массива
+            int ranNumder = randomStartArr.nextInt(randomLongArr - 1); // рандомное число в рамках массива
             System.out.print("Question: ");
             for (int j = 0; j < arr.length; j++) {
                 if (j == ranNumder) { // замена рандомного числа на ".."

@@ -12,17 +12,18 @@ public class Gcd {
         String userName = scannerGcd.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println("Find the greatest common divisor of given numbers.");
-        int min = 1;
-        int max = 100;
-        int diff = max - min;
+        final int minNumber = 1;
+        final int maxNumber = 100;
+        final int maxNumberRоund = 3;
+        int diff = maxNumber - minNumber;
         Scanner scannerGcdAnsver = new Scanner(System.in);
         Random random = new Random();
         int i;
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < maxNumberRоund; i++) {
             int randomNumber = random.nextInt(diff + 1);
             int randomNumberNext = random.nextInt(diff + 1);
-            randomNumber += min;
-            randomNumberNext += min;
+            randomNumber += minNumber;
+            randomNumberNext += minNumber;
             System.out.println("Question: " + randomNumber + " " + randomNumberNext);
             int correctNumb = 1;
             for (int j = 1; j <= randomNumber && j <= randomNumberNext; j++) {
