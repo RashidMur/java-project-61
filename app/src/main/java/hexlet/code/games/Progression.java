@@ -1,16 +1,16 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Progression {
     public static void progression() {
-        Scanner scannerProgName = new Scanner(System.in);
-        System.out.println();
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userNameProg = scannerProgName.next();
-        System.out.println("Hello, " + userNameProg + "!");
+        Engine.greetings();
+        Scanner scannerProg = new Scanner(System.in);
+        String userName = scannerProg.next();
+        System.out.println("Hello, " + userName + "!");
         System.out.println("What number is missing in the progression?");
         int min = 5;
         int max = 10;
@@ -19,8 +19,8 @@ public class Progression {
         Random random = new Random();
         int i;
         for (i = 0; i < 3; i++) {
-            int randomLongArr = random.nextInt(diff + 1);
-            int randomStep = random.nextInt(diff + 1);
+            int randomLongArr = random.nextInt(diff + 1); // рандомный размер массива
+            int randomStep = random.nextInt(diff + 1); // рандомный шаг прогрессии
             randomLongArr += min;
             randomStep += min;
             int min1 = 1;
@@ -30,32 +30,30 @@ public class Progression {
             int startNumder = random1.nextInt(diff1 + 1);
             int[] arr = new int[randomLongArr];
             arr[0] = startNumder;
-            for (int j = 1; j <= arr.length - 1; j++) {
+            for (int j = 1; j <= arr.length - 1; j++) { // строим арифмитическую прогрессию и записываем в массив
                 arr[j] = arr[j - 1] + randomStep;
             }
-            int ranNumder = random1.nextInt(randomLongArr - 1);
+            int ranNumder = random1.nextInt(randomLongArr - 1); // рандомное число в рамках массива
             System.out.print("Question: ");
             for (int j = 0; j < arr.length; j++) {
-                if (j == ranNumder) {
+                if (j == ranNumder) { // замена рандомного числа на ".."
                     System.out.print(".." + " ");
-                } else if (j == randomLongArr - 1) {
+                } else if (j == randomLongArr - 1) { // если доходим до конца массива то печаем с переносом строки
                     System.out.println(arr[j]);
-                } else {
+                } else { // иначе то печатаем без переноса с пробелом
                     System.out.print(arr[j] + " ");
                 }
             }
+            int correctNumb = arr[ranNumder];
             System.out.print("Your choice: ");
-            int userNumber = scannerProgAnsver.nextInt();
-            if (arr[ranNumder] == userNumber) { // если число correctProg равно числу Prog
-                System.out.println("Correct!");
+            int userNumb = scannerProgAnsver.nextInt();
+            if (correctNumb == userNumb) {
+                Engine.correct();
             } else {
-                System.out.println(userNumber + " is wrong answer ;(. Correct answer was " + arr[ranNumder]);
-                System.out.println("Let's try again, " + userNameProg + "!");
+                Engine.wrongNumber(correctNumb, userNumb, userName);
                 break;
             }
         }
-        if (i == 3) { // если счетчик цикла for становится равен 3 то
-            System.out.println("Congratulations, " + userNameProg + "!");
-        }
+        Engine.congratulations(i, userName);
     }
 }
