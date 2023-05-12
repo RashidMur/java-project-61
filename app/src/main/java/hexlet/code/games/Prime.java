@@ -12,15 +12,13 @@ public class Prime {
         String userName = scannerPrimeName.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        String yes = "yes";
-        String no = "no";
         final int minNumber = 2;
         final int maxNumber = 100;
         int diff = maxNumber - minNumber;
-        final int maxNumberRоund = 3;
+        final int maxNumberRound = 3;
         Random random = new Random();
         int i;
-        for (i = 0; i < maxNumberRоund; i++) {
+        for (i = 0; i < maxNumberRound; i++) {
             int randomNumber = random.nextInt(diff + 1);
             System.out.println("Question: " + randomNumber);
             System.out.print("Your answer: ");
@@ -32,14 +30,14 @@ public class Prime {
                 }
             }
             // принимается ответ либо yes либо no, иначе прекращаем
-            if (answer.equals(yes) || answer.equals(no)) {
+            if (answer.equals("yes") || answer.equals("no")) {
                 // если количество раз деления randomNumber без остатка равно 2 а ответ пользователя yes или
                 // если количество раз деления randomNumber без остатка больше 2 а ответ пользователя no
-                if (sum == 2 && answer.equals(yes) || sum > 2 && answer.equals(no)) {
+                if (sum == 2 && answer.equals("yes") || sum > 2 && answer.equals("no")) {
                     Engine.correct();
                     // и наоборот
-                } else if (sum > 2 && answer.equals(yes) || sum == 2 && answer.equals(no)) {
-                    Engine.wrongAnswer(yes, userName, answer);
+                } else if (sum > 2 && answer.equals("yes") || sum == 2 && answer.equals("no")) {
+                    Engine.wrongAnswer(answer, userName);
                     break;
                 }
             } else {

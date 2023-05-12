@@ -14,12 +14,12 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         final int minNumber = 1;
         final int maxNumber = 100;
-        final int maxNumberRоund = 3;
+        final int maxNumberRound = 3;
         int diff = maxNumber - minNumber;
         Random random = new Random();
         String[] operand = new String[]{"+", "-", "*"};
         int i;
-        for (i = 0; i < maxNumberRоund; i++) {
+        for (i = 0; i < maxNumberRound; i++) {
             int n = (int) Math.floor(Math.random() * operand.length);
             int randomNumber = random.nextInt(diff + 1);
             int randomNumberNext = random.nextInt(diff + 1);

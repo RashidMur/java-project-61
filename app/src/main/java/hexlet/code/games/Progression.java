@@ -14,12 +14,12 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         final int minNumber = 5;
         final int maxNumber = 10;
-        final int maxNumberRоund = 3;
+        final int maxNumberRound = 3;
         int diff = maxNumber - minNumber;
         Scanner scannerProgAnsver = new Scanner(System.in);
         Random random = new Random();
         int i;
-        for (i = 0; i < maxNumberRоund; i++) {
+        for (i = 0; i < maxNumberRound; i++) {
             int randomLongArr = random.nextInt(diff + 1); // рандомный размер массива
             int randomStep = random.nextInt(diff + 1); // рандомный шаг прогрессии
             randomLongArr += minNumber;

@@ -14,12 +14,12 @@ public class Gcd {
         System.out.println("Find the greatest common divisor of given numbers.");
         final int minNumber = 1;
         final int maxNumber = 100;
-        final int maxNumberRоund = 3;
+        final int maxNumberRound = 3;
         int diff = maxNumber - minNumber;
         Scanner scannerGcdAnsver = new Scanner(System.in);
         Random random = new Random();
         int i;
-        for (i = 0; i < maxNumberRоund; i++) {
+        for (i = 0; i < maxNumberRound; i++) {
             int randomNumber = random.nextInt(diff + 1);
             int randomNumberNext = random.nextInt(diff + 1);
             randomNumber += minNumber;
