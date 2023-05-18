@@ -31,9 +31,11 @@ public class App {
         final int numberExit = 0;
         switch (choice) {
             case numberGreet :
-                Engine.greetings();
-                Scanner scannerEven = new Scanner(System.in);
-                String userName = scannerEven.next();
+                System.out.println();
+                System.out.println("Welcome to the Brain Games!");
+                System.out.print("May I have your name? ");
+                Scanner scannerGreet = new Scanner(System.in);
+                String userName = scannerGreet.next();
                 System.out.println("Hello, " + userName + "!");
                 break;
             case numberEven :

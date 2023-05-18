@@ -1,23 +1,17 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
     public static void progression() {
-        Engine.greetings();
-        Scanner scannerProg = new Scanner(System.in);
-        String userName = scannerProg.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What number is missing in the progression?");
+        String condition = "What number is missing in the progression?";
         final int minNumber = 5;
         final int maxNumber = 10;
         final int maxNumberRound = 3;
         int diff = maxNumber - minNumber;
-        Scanner scannerProgAnsver = new Scanner(System.in);
         Random random = new Random();
+        String[][] questionAnswer = new String[3][2];
         int i;
         for (i = 0; i < maxNumberRound; i++) {
             int randomLongArr = random.nextInt(diff + 1); // рандомный размер массива
@@ -34,27 +28,19 @@ public class Progression {
             for (int j = 1; j <= arr.length - 1; j++) { // строим арифмитическую прогрессию и записываем в массив
                 arr[j] = arr[j - 1] + randomStep;
             }
+            questionAnswer[i][0] = "";
             int ranNumder = randomStartArr.nextInt(randomLongArr - 1); // рандомное число в рамках массива
-            System.out.print("Question: ");
             for (int j = 0; j < arr.length; j++) {
                 if (j == ranNumder) { // замена рандомного числа на ".."
-                    System.out.print(".." + " ");
-                } else if (j == randomLongArr - 1) { // если доходим до конца массива то печаем с переносом строки
-                    System.out.println(arr[j]);
-                } else { // иначе то печатаем без переноса с пробелом
-                    System.out.print(arr[j] + " ");
+                    questionAnswer[i][0] = questionAnswer[i][0] + " " + "..";
+                } else {
+                    String randomNumbstr1 = Integer.toString(arr[j]);
+                    questionAnswer[i][0] = questionAnswer[i][0] + " " + randomNumbstr1;
                 }
-            }
-            int correctNumb = arr[ranNumder];
-            System.out.print("Your choice: ");
-            int userNumb = scannerProgAnsver.nextInt();
-            if (correctNumb == userNumb) {
-                Engine.correct();
-            } else {
-                Engine.wrongNumber(correctNumb, userNumb, userName);
-                break;
+                String randomNumbstr2 = Integer.toString(arr[ranNumder]);
+                questionAnswer[i][1] = randomNumbstr2;
             }
         }
-        Engine.congratulations(i, userName);
+        Engine.greetings(condition, questionAnswer);
     }
 }
