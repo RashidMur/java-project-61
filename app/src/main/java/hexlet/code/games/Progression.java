@@ -23,23 +23,16 @@ public class Progression {
             int diff1 = maxNumberArr - minNumberArr;
             Random randomStartArr = new Random();
             int startNumder = randomStartArr.nextInt(diff1 + 1);
-            int[] arr = new int[randomLongArr];
-            arr[0] = startNumder;
+            String[] arr = new String[randomLongArr];
+            arr[0] = Integer.toString(startNumder);
             for (int j = 1; j <= arr.length - 1; j++) { // строим арифмитическую прогрессию и записываем в массив
-                arr[j] = arr[j - 1] + randomStep;
+                arr[j] = Integer.toString(Integer.parseInt(arr[j - 1]) + randomStep);
             }
-            questionAnswer[i][0] = "";
-            int ranNumder = randomStartArr.nextInt(randomLongArr - 1); // рандомное число в рамках массива
-            for (int j = 0; j < arr.length; j++) {
-                if (j == ranNumder) { // замена рандомного числа на ".."
-                    questionAnswer[i][0] = questionAnswer[i][0] + " " + "..";
-                } else {
-                    String randomNumbstr1 = Integer.toString(arr[j]);
-                    questionAnswer[i][0] = questionAnswer[i][0] + " " + randomNumbstr1;
-                }
-                String randomNumbstr2 = Integer.toString(arr[ranNumder]);
-                questionAnswer[i][1] = randomNumbstr2;
-            }
+            int ranIndex = randomStartArr.nextInt(randomLongArr - 1); // рандомное число в рамках массива
+            questionAnswer[i][1] = arr[ranIndex];
+            arr[ranIndex] = "..";
+            String progStr = String.join(" ", arr);
+            questionAnswer[i][0] = progStr;
         }
         Engine.greetings(condition, questionAnswer);
     }
