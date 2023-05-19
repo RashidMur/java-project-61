@@ -11,7 +11,7 @@ public class Gcd {
         final int maxNumberRound = 3;
         int diff = maxNumber - minNumber;
         Random random = new Random();
-        String[][] questionAnswer = new String[3][2];
+        String[][] questionAnswer = new String[maxNumberRound][2];
         int i;
         for (i = 0; i < maxNumberRound; i++) {
             int randomNumber = random.nextInt(diff + 1);

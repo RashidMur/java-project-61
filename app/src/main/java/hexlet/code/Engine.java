@@ -11,7 +11,7 @@ public class Engine {
         String userName = scannerName.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(condition);
-        int maxNumberRound = 3;
+        final int maxNumberRound = 3;
         int i;
         for (i = 0; i < maxNumberRound; i++) {
             Scanner scannerAnswer = new Scanner(System.in);

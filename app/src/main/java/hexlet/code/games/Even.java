@@ -9,7 +9,7 @@ public class Even {
         final int minNumber = 1;
         final int maxNumber = 100;
         final int maxNumberRound = 3;
-        String[][] questionAnswer = new String[3][2];
+        String[][] questionAnswer = new String[maxNumberRound][2];
         int diff = maxNumber - minNumber;
         Random random = new Random();
         int i;
