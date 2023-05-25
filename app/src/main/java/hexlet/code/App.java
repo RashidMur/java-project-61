@@ -9,6 +9,13 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class App {
+    public static final int NUMBER_GREET = 1;
+    public static final int NUMBER_EVEN = 2;
+    public static final int NUMBER_CALC = 3;
+    public static final int NUMBER_GCD = 4;
+    public static final int NUMBER_PROGRESSION = 5;
+    public static final int NUMBER_PRIME = 6;
+    public static final int NUMBER_EXIT = 0;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -22,37 +29,25 @@ public class App {
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
         int choice = scanner.nextInt();
-        final int numberGreet = 1;
-        final int numberEven = 2;
-        final int numberCalc = 3;
-        final int numberGCD = 4;
-        final int numberProgression = 5;
-        final int numberPrime = 6;
-        final int numberExit = 0;
         switch (choice) {
-            case numberGreet :
-                System.out.println();
-                System.out.println("Welcome to the Brain Games!");
-                System.out.print("May I have your name? ");
-                Scanner scannerGreet = new Scanner(System.in);
-                String userName = scannerGreet.next();
-                System.out.println("Hello, " + userName + "!");
+            case NUMBER_GREET :
+                Cli.greeting();
                 break;
-            case numberEven :
+            case NUMBER_EVEN :
                 Even.even();
                 break;
-            case numberCalc :
+            case NUMBER_CALC :
                 Calc.calc();
                 break;
-            case numberGCD :
+            case NUMBER_GCD :
                 Gcd.gcd();
                 break;
-            case numberProgression :
+            case NUMBER_PROGRESSION :
                 Progression.progression();
                 break;
-            case numberPrime :
+            case NUMBER_PRIME :
                 Prime.prime();
-            case numberExit :
+            case NUMBER_EXIT :
             default :
         }
         scanner.close();

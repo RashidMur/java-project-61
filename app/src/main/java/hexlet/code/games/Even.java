@@ -1,31 +1,37 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Utils;
 
 public class Even {
-    public static void even() {
-        String condition = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        final int minNumber = 1;
-        final int maxNumber = 100;
-        final int maxNumberRound = 3;
-        String[][] questionAnswer = new String[maxNumberRound][2];
-        int diff = maxNumber - minNumber;
-        Random random = new Random();
-        int i;
-        for (i = 0; i < maxNumberRound; i++) {
-            int randomNumb = random.nextInt(diff + 1);
+    public static final String CONDITION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final int MIN_NUMBER = 2;
+    public static final int MAX_NUMBER = 100;
 
-            if (randomNumb % 2 == 0) {
-                String randomNumbstr = Integer.toString(randomNumb);
-                questionAnswer[i][0] = randomNumbstr;
-                questionAnswer[i][1] = "yes";
-            } else {
-                String randomNumbstr = Integer.toString(randomNumb);
-                questionAnswer[i][0] = randomNumbstr;
-                questionAnswer[i][1] = "no";
-            }
+    public static String[] generateRoundData() {
+        String[] roundData = new String[2];
+        int randomNumb = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
+        if (isEven(randomNumb)) {
+            String randomNumbstr = Integer.toString(randomNumb);
+            roundData[0] = randomNumbstr;
+            roundData[1] = "yes";
+        } else {
+            String randomNumbstr = Integer.toString(randomNumb);
+            roundData[0] = randomNumbstr;
+            roundData[1] = "no";
         }
-        Engine.greetings(condition, questionAnswer);
+        return roundData;
+    }
+    public static void even() {
+        String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
+        for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
+            String[] roundDataEven = generateRoundData();
+            questionAnswer[i][0] = roundDataEven[0];
+            questionAnswer[i][1] = roundDataEven[1];
+        }
+        Engine.engineRun(CONDITION, questionAnswer);
+    }
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
