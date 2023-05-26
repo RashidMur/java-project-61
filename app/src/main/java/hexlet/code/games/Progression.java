@@ -12,9 +12,9 @@ public class Progression {
         int randomLongArr = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный размер массива
         int randomStep = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный шаг прогрессии
         randomLongArr += MIN_NUMBER;
-        randomStep += MAX_NUMBER;
+        randomStep += MIN_NUMBER;
         int startNumder = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // начальный элемент прогрессии
-        int ranIndex = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный индекс в рамках массива
+        int ranIndex = Utils.generateNumber(0, randomLongArr - 1); // рандомный индекс в рамках массива
         String[] arrRoundData = isPogression(randomLongArr, startNumder, randomStep);
         roundData[1] = arrRoundData[ranIndex];
         arrRoundData[ranIndex] = "..";
