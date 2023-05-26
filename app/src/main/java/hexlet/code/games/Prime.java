@@ -10,7 +10,7 @@ public class Prime {
     public static String[] generateRoundData() {
         String[] roundData = new String[2];
         int randomNumb = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-        if (isPrime(randomNumb) == 0) {
+        if (isPrime(randomNumb) == 2) {
             String randomNumbstr = Integer.toString(randomNumb);
             roundData[0] = randomNumbstr;
             roundData[1] = "yes";
