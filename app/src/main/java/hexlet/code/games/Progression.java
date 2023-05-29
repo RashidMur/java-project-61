@@ -9,34 +9,31 @@ public class Progression {
     public static final int MAX_NUMBER = 10;
     public static String[] generateRoundData() {
         String[] roundData = new String[2];
-        int randomLongArr = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный размер массива
+        int longProgression = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный размер массива
         int randomStep = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный шаг прогрессии
-        randomLongArr += MIN_NUMBER;
-        randomStep += MIN_NUMBER;
         int startNumder = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // начальный элемент прогрессии
-        int ranIndex = Utils.generateNumber(0, randomLongArr - 1); // рандомный индекс в рамках массива
-        String[] arrRoundData = isPogression(randomLongArr, startNumder, randomStep);
-        roundData[1] = arrRoundData[ranIndex];
-        arrRoundData[ranIndex] = "..";
-        String progStr = String.join(" ", arrRoundData);
-        roundData[0] = progStr;
+        int randomIndex = Utils.generateNumber(0, longProgression - 1); // рандомный индекс в рамках массива
+        String[] progressionRoundData = generateProgression(longProgression, startNumder, randomStep);
+        roundData[1] = progressionRoundData[randomIndex];
+        progressionRoundData[randomIndex] = "..";
+        roundData[0] = String.join(" ", progressionRoundData);
         return roundData;
     }
     public static void progression() {
         String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
         for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
-            String[] roundDataGcd = generateRoundData();
-            questionAnswer[i][0] = roundDataGcd[0];
-            questionAnswer[i][1] = roundDataGcd[1];
+            String[] roundDataProgression = generateRoundData();
+            questionAnswer[i][0] = roundDataProgression[0];
+            questionAnswer[i][1] = roundDataProgression[1];
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
-    public static String[] isPogression(int randomLongArr, int startNumder, int randomStep) {
-        String[] arr = new String[randomLongArr];
-        arr[0] = Integer.toString(startNumder);
-        for (int j = 1; j <= arr.length - 1; j++) { // строим арифмитическую прогрессию и записываем в массив
-            arr[j] = Integer.toString(Integer.parseInt(arr[j - 1]) + randomStep);
+    public static String[] generateProgression(int longProgression, int startNumder, int randomStep) {
+        String[] progressionOfNumb = new String[longProgression];
+        progressionOfNumb[0] = Integer.toString(startNumder);
+        for (int j = 1; j <= progressionOfNumb.length - 1; j++) { // строим арифмитическую прогрессию в массиве
+            progressionOfNumb[j] = Integer.toString(Integer.parseInt(progressionOfNumb[j - 1]) + randomStep);
         }
-        return arr;
+        return progressionOfNumb;
     }
 }

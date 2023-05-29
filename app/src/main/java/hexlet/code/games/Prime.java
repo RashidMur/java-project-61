@@ -10,15 +10,8 @@ public class Prime {
     public static String[] generateRoundData() {
         String[] roundData = new String[2];
         int randomNumb = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-        if (isPrime(randomNumb) == 2) {
-            String randomNumbstr = Integer.toString(randomNumb);
-            roundData[0] = randomNumbstr;
-            roundData[1] = "yes";
-        } else {
-            String randomNumbstr = Integer.toString(randomNumb);
-            roundData[0] = randomNumbstr;
-            roundData[1] = "no";
-        }
+        roundData[0] = Integer.toString(randomNumb);
+        roundData[1] = isPrime(randomNumb) ? "yes" : "no";
         return roundData;
     }
     public static void prime() {
@@ -30,16 +23,13 @@ public class Prime {
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
-    public static int isPrime(int number) {
+    public static boolean isPrime(int number) {
         int sum = 0;
         for (int j = 1; j <= number; j++) {
             if (number % j == 0) { // делим number пока остаток от деления == 0 и суммируем
                 sum++;
             }
         }
-        return sum;
+        return sum == 2;
     }
 }
-
-
-

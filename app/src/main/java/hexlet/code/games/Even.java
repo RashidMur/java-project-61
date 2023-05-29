@@ -11,15 +11,8 @@ public class Even {
     public static String[] generateRoundData() {
         String[] roundData = new String[2];
         int randomNumb = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-        if (isEven(randomNumb)) {
-            String randomNumbstr = Integer.toString(randomNumb);
-            roundData[0] = randomNumbstr;
-            roundData[1] = "yes";
-        } else {
-            String randomNumbstr = Integer.toString(randomNumb);
-            roundData[0] = randomNumbstr;
-            roundData[1] = "no";
-        }
+        roundData[0] = Integer.toString(randomNumb);
+        roundData[1] = isEven(randomNumb) ? "yes" : "no";
         return roundData;
     }
     public static void even() {

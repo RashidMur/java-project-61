@@ -11,13 +11,8 @@ public class Gcd {
         String[] roundData = new String[2];
         int randomNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
         int randomNumberNext = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-        randomNumber += MIN_NUMBER;
-        randomNumberNext += MAX_NUMBER;
-        String randomNumbstr = Integer.toString(isGcd(randomNumber, randomNumberNext));
-        roundData[1] = randomNumbstr;
-        String randomNumbstr1 = Integer.toString(randomNumber);
-        String randomNumbstr2 = Integer.toString(randomNumberNext);
-        roundData[0] = randomNumbstr1 + " " + randomNumbstr2;
+        roundData[1] = Integer.toString(calcualteGcd(randomNumber, randomNumberNext));
+        roundData[0] = randomNumber + " " + randomNumberNext;
         return roundData;
     }
     public static void gcd() {
@@ -29,13 +24,13 @@ public class Gcd {
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
-    public static int isGcd(int number, int numberNext) {
-        int correctNumb = 1;
-        for (int j = 1; j <= number && j <= numberNext; j++) {
-            if (number % j == 0 && numberNext % j == 0) { //делим обе цифры пока остатки от деления ==0
-                correctNumb = j;
+    public static int calcualteGcd(int randomNumber, int randomNumberNext) {
+        int correctAnswer = 1;
+        for (int j = 1; j <= randomNumber && j <= randomNumberNext; j++) {
+            if (randomNumber % j == 0 && randomNumberNext % j == 0) { //делим обе цифры пока остатки от деления ==0
+                correctAnswer = j;
             }
         }
-        return correctNumb;
+        return correctAnswer;
     }
 }

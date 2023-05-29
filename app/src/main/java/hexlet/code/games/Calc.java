@@ -13,11 +13,8 @@ public class Calc {
         int n = (int) Math.floor(Math.random() * operand.length);
         int randomNumber = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
         int randomNumberNext = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER);
-        String randomNumbstr = Integer.toString(isCalc(randomNumber, randomNumberNext, n));
-        roundData[1] = randomNumbstr;
-        String randomNumbstr1 = Integer.toString(randomNumber);
-        String randomNumbstr2 = Integer.toString(randomNumberNext);
-        roundData[0] = randomNumbstr1 + " " + operand[n] + " " + randomNumbstr2;
+        roundData[1] = Integer.toString(generateCalc(randomNumber, randomNumberNext, n));
+        roundData[0] = randomNumber + " " + operand[n] + " " + randomNumberNext;
         return roundData;
     }
     public static void calc() {
@@ -29,16 +26,13 @@ public class Calc {
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
-    public static int isCalc(int number, int numberNext, int n) {
+    public static int generateCalc(int number, int numberNext, int n) {
         String[] operand = new String[]{"+", "-", "*"};
         return switch (operand[n]) {
             case "+" -> number + numberNext;
             case "-" -> number - numberNext;
             case "*" -> number * numberNext;
-            default -> {
-                System.out.println("null");
-                yield 0;
-            }
+            default -> throw new Error("Unknown order state: '${operand[n]}'!");
         };
     }
 }
