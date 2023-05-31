@@ -15,7 +15,8 @@ public class Even {
         roundData[1] = isEven(randomNumb) ? "yes" : "no";
         return roundData;
     }
-    public static void even() {
+
+    public static void runGame() {
         String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
         for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
             String[] roundDataEven = generateRoundData();
@@ -24,6 +25,7 @@ public class Even {
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
+
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }

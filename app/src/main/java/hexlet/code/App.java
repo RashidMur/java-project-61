@@ -16,6 +16,7 @@ public class App {
     public static final int NUMBER_PROGRESSION = 5;
     public static final int NUMBER_PRIME = 6;
     public static final int NUMBER_EXIT = 0;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -34,20 +35,22 @@ public class App {
                 Cli.greeting();
                 break;
             case NUMBER_EVEN :
-                Even.even();
+                Even.runGame();
                 break;
             case NUMBER_CALC :
-                Calc.calc();
+                Calc.runGame();
                 break;
             case NUMBER_GCD :
-                Gcd.gcd();
+                Gcd.runGame();
                 break;
             case NUMBER_PROGRESSION :
-                Progression.progression();
+                Progression.runGame();
                 break;
             case NUMBER_PRIME :
-                Prime.prime();
+                Prime.runGame();
+                break;
             case NUMBER_EXIT :
+                break;
             default :
         }
         scanner.close();

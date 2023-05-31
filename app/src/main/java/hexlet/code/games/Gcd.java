@@ -15,7 +15,7 @@ public class Gcd {
         roundData[0] = randomNumber + " " + randomNumberNext;
         return roundData;
     }
-    public static void gcd() {
+    public static void runGame() {
         String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
         for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
             String[] roundDataGcd = generateRoundData();

@@ -7,6 +7,7 @@ public class Calc {
     public static final String CONDITION = "What is the result of the expression?";
     public static final int MIN_NUMBER = 1;
     public static final int MAX_NUMBER = 100;
+
     public static String[] generateRoundData() {
         String[] operand = new String[]{"+", "-", "*"};
         String[] roundData = new String[2];
@@ -17,7 +18,7 @@ public class Calc {
         roundData[0] = randomNumber + " " + operand[n] + " " + randomNumberNext;
         return roundData;
     }
-    public static void calc() {
+    public static void runGame() {
         String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
         for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
             String[] roundDataPrime = generateRoundData();

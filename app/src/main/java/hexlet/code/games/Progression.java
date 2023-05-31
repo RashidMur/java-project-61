@@ -7,6 +7,7 @@ public class Progression {
     public static final String CONDITION = "What number is missing in the progression?";
     public static final int MIN_NUMBER = 5;
     public static final int MAX_NUMBER = 10;
+
     public static String[] generateRoundData() {
         String[] roundData = new String[2];
         int longProgression = Utils.generateNumber(MIN_NUMBER, MAX_NUMBER); // рандомный размер массива
@@ -19,7 +20,8 @@ public class Progression {
         roundData[0] = String.join(" ", progressionRoundData);
         return roundData;
     }
-    public static void progression() {
+
+    public static void runGame() {
         String[][] questionAnswer = new String[Engine.NUMBER_ROUND][2];
         for (int i = 0; i < Engine.NUMBER_ROUND; i++) {
             String[] roundDataProgression = generateRoundData();
@@ -28,6 +30,7 @@ public class Progression {
         }
         Engine.engineRun(CONDITION, questionAnswer);
     }
+
     public static String[] generateProgression(int longProgression, int startNumder, int randomStep) {
         String[] progressionOfNumb = new String[longProgression];
         progressionOfNumb[0] = Integer.toString(startNumder);
